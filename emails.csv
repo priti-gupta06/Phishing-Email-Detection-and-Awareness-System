@@ -1,0 +1,21 @@
+email_text,label
+"Congratulations! You won a lottery. Click here to claim your prize.",phishing
+"Your bank account has been suspended. Verify your details immediately.",phishing
+"Urgent! Your password will expire. Click this link to update it.",phishing
+"You have won a free iPhone. Claim your reward now.",phishing
+"Your account is locked. Send your password to restore access.",phishing
+"Congratulations! You have received a cash reward. Claim now.",phishing
+"Your payment failed. Click this link to update your card details.",phishing
+"Your package is waiting. Pay the delivery fee using this link.",phishing
+"Your account will be deleted today unless you verify your identity.",phishing
+"Click here to receive your unexpected tax refund.",phishing
+"Your monthly electricity bill is now available.",legitimate
+"Hello, your meeting is scheduled for tomorrow at 10 AM.",legitimate
+"Thank you for placing your order. Your receipt is attached.",legitimate
+"Your bank statement for this month is ready to view.",legitimate
+"Please find the project report attached for your review.",legitimate
+"Your appointment is confirmed for Monday morning.",legitimate
+"Your subscription renewal is scheduled for next month.",legitimate
+"Thank you for attending our training session today.",legitimate
+"Your application has been received successfully.",legitimate
+"Please review the updated office meeting schedule.",legitimate

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Detector</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101827;
+            color: white;
+        }
+
+        header {
+            background: #172438;
+            padding: 22px;
+            text-align: center;
+            border-bottom: 1px solid #34445b;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            margin: 0;
+        }
+
+        header p {
+            color: #bdc8d8;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 25px;
+        }
+
+        .card {
+            background: #1c2b40;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px #0005;
+        }
+
+        h2 {
+            color: #38bdf8;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #52657d;
+            background: #101827;
+            color: white;
+            font-size: 15px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 22px;
+            border-radius: 10px;
+            background: #263b54;
+        }
+
+        .phishing {
+            color: #fb7185;
+        }
+
+        .legitimate {
+            color: #4ade80;
+        }
+
+        .result p {
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Phishing Email Detection System</h1>
+    <p>AI-Powered Email Security & Awareness</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Analyze Your Email</h2>
+
+        <p>Paste your email message below to check for phishing indicators.</p>
+
+        <form method="POST">
+
+            <textarea
+                name="email"
+                placeholder="Paste your email message here..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Analyze Email
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result">
+
+            <h2>Analysis Result</h2>
+
+            <h3 class="{% if result.classification == 'PHISHING' %}phishing{% else %}legitimate{% endif %}">
+                {{ result.classification }}
+            </h3>
+
+            <p>
+                <strong>Risk Score:</strong>
+                {{ result.risk_score }}%
+            </p>
+
+            <p>
+                <strong>Suspicious Words:</strong>
+                {{ result.suspicious_words }}
+            </p>
+
+            <p>
+                <strong>Suspicious Links:</strong>
+                {{ result.suspicious_links }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<footer>
+    Phishing Email Detection & Awareness System
+</footer>
+
+</body>
+</html>
